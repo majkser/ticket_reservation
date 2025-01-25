@@ -1,4 +1,5 @@
 #include "admin.h"
+#include "flights.h"
 #include <iostream>
 #include <string>
 
@@ -32,18 +33,29 @@ bool Admin::is_admin_logged()
 
 void Admin::display_admin_menu()
 {
-    while (option != 4)
+    while (option != 5)
     {
+        FlightMenager FlightMenager;
+
         std::cout << "1. Dodaj lot" << std::endl;
         std::cout << "2. Usun lot" << std::endl;
         std::cout << "3. Wyswietl rezerwacje" << std::endl;
-        std::cout << "4. Wyloguj" << std::endl;
+        std::cout << "4. Wyswietl dostepne loty" << std::endl;
+        std::cout << "5. Wyloguj" << std::endl;
         std::cout << "Wybierz opcje: ";
         std::cin >> option;
 
         switch (option)
         {
         case 4:
+        {
+            std::cout << "Dostepne loty:" << std::endl;
+            std::cout << std::endl;
+            FlightMenager.display_flights();
+            std::cout << std::endl;
+            break;
+        }
+        case 5:
         {
             is_admin = false;
             std::cout << "Wylogowano" << std::endl;

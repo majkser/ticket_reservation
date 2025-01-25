@@ -29,6 +29,7 @@ int main()
         case 1:
         {
             std::cout << "Dostepne loty:" << std::endl;
+            std::cout << std::endl;
             FlightMenager.display_flights();
             break;
         }
