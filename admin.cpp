@@ -16,12 +16,16 @@ bool Admin::is_admin_logged()
     if (password == admin_password)
     {
         is_admin = true;
+        std::cout << std::endl;
         std::cout << "Zalogowano jako administrator" << std::endl;
+        std::cout << std::endl;
         return true;
     }
     else
     {
+        std::cout << std::endl;
         std::cout << "Niepoprawne haslo, sprobuj ponownie" << std::endl;
+        std::cout << std::endl;
         return false;
     }
 }

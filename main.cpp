@@ -12,7 +12,9 @@ int main()
 
     while (user_action_choice != 5)
     {
+        std::cout << std::endl;
         std::cout << "System rezerwacji biletow lotniczych" << std::endl;
+        std::cout << std::endl;
         std::cout << "1. Dostepne loty" << std::endl;
         std::cout << "2. Rezerwacja biletu" << std::endl;
         std::cout << "3. Anulowanie rezerwacji" << std::endl;
