@@ -21,8 +21,8 @@ private:
 
 public:
     FlightMenager();
-    void display_flights();
     void add_flight();
+    void display_flights();
 };
 
 #endif

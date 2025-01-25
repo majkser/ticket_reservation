@@ -1,3 +1,4 @@
+#include "flights.h"
 #ifndef admin_h
 #define admin_h
 
@@ -14,7 +15,7 @@ private:
 public:
     Admin();
     bool is_admin_logged();
-    void display_admin_menu();
+    void display_admin_menu(FlightMenager &FlightMenager);
 };
 
 #endif

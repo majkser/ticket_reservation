@@ -31,12 +31,10 @@ bool Admin::is_admin_logged()
     }
 }
 
-void Admin::display_admin_menu()
+void Admin::display_admin_menu(FlightMenager &FlightMenager)
 {
     while (option != 5)
     {
-        FlightMenager FlightMenager;
-
         std::cout << "1. Dodaj lot" << std::endl;
         std::cout << "2. Usun lot" << std::endl;
         std::cout << "3. Wyswietl rezerwacje" << std::endl;
@@ -47,6 +45,11 @@ void Admin::display_admin_menu()
 
         switch (option)
         {
+        case 1:
+        {
+            FlightMenager.add_flight();
+            break;
+        }
         case 4:
         {
             std::cout << "Dostepne loty:" << std::endl;

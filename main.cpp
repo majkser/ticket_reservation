@@ -38,7 +38,7 @@ int main()
         {
             if (Admin.is_admin_logged())
             {
-                Admin.display_admin_menu();
+                Admin.display_admin_menu(FlightMenager);
             }
             break;
         }
