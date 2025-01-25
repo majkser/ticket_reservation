@@ -50,6 +50,12 @@ void Admin::display_admin_menu(FlightMenager &FlightMenager)
             FlightMenager.add_flight();
             break;
         }
+        case 2:
+        {
+            FlightMenager.remove_flight();
+            break;
+        }
+
         case 4:
         {
             std::cout << "Dostepne loty:" << std::endl;

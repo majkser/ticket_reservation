@@ -28,6 +28,27 @@ void FlightMenager::add_flight()
     std::cout << std::endl;
 }
 
+void FlightMenager::remove_flight()
+{
+    int flight_to_remove_id;
+    std::cout << "Podaj numer lotu do usuniecia: ";
+    std::cin >> flight_to_remove_id;
+
+    if (flight_to_remove_id > flights.size())
+    {
+        std::cout << "Nie ma takiego lotu" << std::endl;
+        return;
+    }
+
+    flights.erase(flights.begin() + flight_to_remove_id - 1);
+    std::cout << "Usunieto lot" << std::endl;
+
+    for (int i = 0; i < flights.size(); i++)
+    {
+        flights[i].flight_id = i + 1;
+    }
+};
+
 void FlightMenager::display_flights()
 {
     for (auto f : flights)

@@ -38,6 +38,7 @@ int main()
         {
             if (Admin.is_admin_logged())
             {
+                std::cout << std::endl;
                 Admin.display_admin_menu(FlightMenager);
             }
             break;

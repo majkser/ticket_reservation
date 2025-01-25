@@ -22,6 +22,7 @@ private:
 public:
     FlightMenager();
     void add_flight();
+    void remove_flight();
     void display_flights();
 };
 
