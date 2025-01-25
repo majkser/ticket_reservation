@@ -47,3 +47,8 @@ int main()
     }
     return 0;
 }
+
+// TODO
+//  zapisywac rezerwacje w mapie klucz to imie/nick, watrosc to lot
+//  wyswietlanie rezerwacji - user musi podac swoje imie/nick i widzi tylko swoje rezerwacje
+//  wyswietlanie rezerwacji - admin widzi wszystkie rezerwacje
