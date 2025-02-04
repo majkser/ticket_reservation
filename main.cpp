@@ -49,6 +49,12 @@ int main()
             FlightMenager.display_user_reservations();
             break;
         }
+        case 5:
+        {
+            std::cout << "DO ZOBACZENIA !" << std::endl;
+            break;
+        }
+
         case 6:
         {
             if (Admin.is_admin_logged())
@@ -64,6 +70,4 @@ int main()
 }
 
 // TODO
-//  zapisywac rezerwacje w mapie klucz to imie/nick, watrosc to lot
-//  wyswietlanie rezerwacji - user musi podac swoje imie/nick i widzi tylko swoje rezerwacje
-//  wyswietlanie rezerwacji - admin widzi wszystkie rezerwacje
+// user ma mozliwosc usunac rezerwacje
