@@ -1,5 +1,9 @@
 #include "flights.h"
 #include <iostream>
+#include <string>
+#include <vector>
+#include "algorithm"
+#include <map>
 
 FlightMenager::FlightMenager()
 {
@@ -43,10 +47,10 @@ void FlightMenager::remove_flight()
     flights.erase(flights.begin() + flight_to_remove_id - 1);
     std::cout << "Usunieto lot" << std::endl;
 
-    for (int i = 0; i < flights.size(); i++)
-    {
-        flights[i].flight_id = i + 1;
-    }
+    // for (int i = 0; i < flights.size(); i++)
+    // {
+    //     flights[i].flight_id = i + 1;
+    // }
 };
 
 void FlightMenager::display_flights()
@@ -60,4 +64,48 @@ void FlightMenager::display_flights()
                   << " o godzinie " << f.departure_time
                   << " w cenie " << f.price << " PLN" << std::endl;
     }
+}
+
+void FlightMenager::display_user_reservations()
+{
+    int booking_number;
+    std::cout << "Podaj numer rezerwacji: ";
+    std::cin >> booking_number;
+
+    if (booking_map.find(booking_number) == booking_map.end())
+    {
+        std::cout << "Rezerwacja o takim numerze nie istnieje" << std::endl;
+        return;
+    }
+
+    flight f = booking_map[booking_number];
+
+    std::cout << "Twoja rezerwacja ( o numerze: " << booking_number << "): " << std::endl;
+    std::cout << "lot o numerze: " << f.flight_id
+              << " z " << f.departure_city
+              << " do " << f.arrival_city
+              << " dnia " << f.date
+              << " o godzinie " << f.departure_time
+              << std::endl;
+}
+
+void FlightMenager::booking_flight()
+{
+    int flight_to_book_id;
+    std::cout << "Podaj numer lotu do zarezerwowania: ";
+    std::cin >> flight_to_book_id;
+
+    bool is_id_correct = std::find_if(flights.begin(), flights.end(), [flight_to_book_id](flight f)
+                                      { return f.flight_id == flight_to_book_id; }) != flights.end();
+    if (!is_id_correct)
+    {
+        std::cout << "Nie ma takiego lotu" << std::endl;
+        return;
+    }
+
+    int booking_number = (booking_map.size() + 1) * 10;
+
+    std::cout << "Zarezerwowano lot, twoj numer rezerwacji: " << booking_number << std::endl;
+
+    booking_map.insert({booking_number, flights[flight_to_book_id]});
 }

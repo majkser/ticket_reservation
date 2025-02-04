@@ -34,6 +34,21 @@ int main()
             break;
         }
 
+        case 2:
+        {
+            std::cout << "Rezerwacja biletu" << std::endl;
+            std::cout << std::endl;
+            FlightMenager.booking_flight();
+            break;
+        }
+
+        case 4:
+        {
+            std::cout << "Wyswietl rezerwacje" << std::endl;
+            std::cout << std::endl;
+            FlightMenager.display_user_reservations();
+            break;
+        }
         case 6:
         {
             if (Admin.is_admin_logged())

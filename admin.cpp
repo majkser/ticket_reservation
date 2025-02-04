@@ -36,13 +36,12 @@ bool Admin::is_admin_logged()
 void Admin::display_admin_menu(FlightMenager &FlightMenager)
 {
     option = 0;
-    while (option != 5)
+    while (option != 4)
     {
         std::cout << "1. Dodaj lot" << std::endl;
         std::cout << "2. Usun lot" << std::endl;
-        std::cout << "3. Wyswietl rezerwacje" << std::endl;
-        std::cout << "4. Wyswietl dostepne loty" << std::endl;
-        std::cout << "5. Wyloguj" << std::endl;
+        std::cout << "3. Wyswietl dostepne loty" << std::endl;
+        std::cout << "4. Wyloguj" << std::endl;
         std::cout << "Wybierz opcje: ";
         std::cin >> option;
 
@@ -59,7 +58,7 @@ void Admin::display_admin_menu(FlightMenager &FlightMenager)
             break;
         }
 
-        case 4:
+        case 3:
         {
             std::cout << "Dostepne loty:" << std::endl;
             std::cout << std::endl;
@@ -67,7 +66,7 @@ void Admin::display_admin_menu(FlightMenager &FlightMenager)
             std::cout << std::endl;
             break;
         }
-        case 5:
+        case 4:
         {
             is_admin = false;
             std::cout << "Wylogowano" << std::endl;
