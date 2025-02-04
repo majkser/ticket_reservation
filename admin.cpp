@@ -6,6 +6,7 @@
 Admin::Admin()
 {
     admin_password = "admin";
+    option = 0;
 }
 
 bool Admin::is_admin_logged()
@@ -24,6 +25,7 @@ bool Admin::is_admin_logged()
     }
     else
     {
+        is_admin = false;
         std::cout << std::endl;
         std::cout << "Niepoprawne haslo, sprobuj ponownie" << std::endl;
         std::cout << std::endl;
@@ -33,6 +35,7 @@ bool Admin::is_admin_logged()
 
 void Admin::display_admin_menu(FlightMenager &FlightMenager)
 {
+    option = 0;
     while (option != 5)
     {
         std::cout << "1. Dodaj lot" << std::endl;
@@ -69,6 +72,9 @@ void Admin::display_admin_menu(FlightMenager &FlightMenager)
             is_admin = false;
             std::cout << "Wylogowano" << std::endl;
             break;
+        }
+        default:
+        {
         }
         }
     }
