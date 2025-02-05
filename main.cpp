@@ -42,6 +42,14 @@ int main()
             break;
         }
 
+        case 3:
+        {
+            std::cout << "Anulowanie rezerwacji" << std::endl;
+            std::cout << std::endl;
+            FlightMenager.cancel_booking();
+            break;
+        }
+
         case 4:
         {
             std::cout << "Wyswietl rezerwacje" << std::endl;
@@ -70,5 +78,5 @@ int main()
 }
 
 // TODO
-// user ma mozliwosc usunac rezerwacje
+// user ma mozliwosc usunac rezerwacje                DOING
 // co sie dzieje jak ktos ma rezerwacje a admin usuwa lot ?

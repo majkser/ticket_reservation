@@ -109,3 +109,20 @@ void FlightMenager::booking_flight()
 
     booking_map.insert({booking_number, flights[flight_to_book_id]});
 }
+
+void FlightMenager::cancel_booking()
+{
+    int booking_number;
+    std::cout << "Podaj numer rezerwacji do anulowania: ";
+    std::cin >> booking_number;
+
+    if (booking_map.find(booking_number) == booking_map.end())
+    {
+        std::cout << "Rezerwacja o takim numerze nie istnieje" << std::endl;
+        return;
+    }
+
+    booking_map.erase(booking_number);
+    std::cout << "Anulowano rezerwacje" << std::endl;
+    std::cout << std::endl;
+}

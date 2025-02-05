@@ -29,6 +29,7 @@ public:
     void display_flights();
     void display_user_reservations();
     void booking_flight();
+    void cancel_booking();
 };
 
 #endif
