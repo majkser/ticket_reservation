@@ -50,11 +50,9 @@ This project is a simple ticket reservation system for flights. It allows users 
     - `4`: Logout
 
 ## File Structure
-- [main.cpp](http://_vscodecontentref_/0): Entry point of the application
-- [flights.h](http://_vscodecontentref_/1) / [flights.cpp](http://_vscodecontentref_/2): Contains the [FlightMenager](http://_vscodecontentref_/3) class and its methods
-- [admin.h](http://_vscodecontentref_/4) / [admin.cpp](http://_vscodecontentref_/5): Contains the [Admin](http://_vscodecontentref_/6) class and its methods
-- [Makefile](http://_vscodecontentref_/7): Build configuration
-- [.gitignore](http://_vscodecontentref_/8): Files and directories to be ignored by git
+- [main.cpp](https://github.com/majkser/ticket_reservation/blob/main/main.cpp): Entry point of the application
+- [flights.h](https://github.com/majkser/ticket_reservation/blob/main/flights.h) / [flights.cpp](https://github.com/majkser/ticket_reservation/blob/main/flights.cpp): Contains the FlightMenager and its methods
+- [admin.h](https://github.com/majkser/ticket_reservation/blob/main/admin.h) / [admin.cpp](https://github.com/majkser/ticket_reservation/blob/main/admin.cpp): Contains the Admin and its methods
 
 ## Example
 ```sh
