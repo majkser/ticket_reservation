@@ -20,7 +20,7 @@ This project is a simple ticket reservation system for flights. It allows users 
 ## Setup
 1. Clone the repository:
     ```sh
-    git clone <https://github.com/majkser/ticket_reservation>
+    git clone https://github.com/majkser/ticket_reservation
     cd ticket_reservation
     ```
 
