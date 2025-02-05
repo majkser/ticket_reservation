@@ -31,7 +31,7 @@ This project is a simple ticket reservation system for flights. It allows users 
 
 3. Run the program:
     ```sh
-    ./program
+    ./main.exe
     ```
 
 ## Usage
