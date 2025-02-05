@@ -107,7 +107,7 @@ void FlightMenager::booking_flight()
 
     std::cout << "Zarezerwowano lot, twoj numer rezerwacji: " << booking_number << std::endl;
 
-    booking_map.insert({booking_number, flights[flight_to_book_id]});
+    booking_map.insert({booking_number, flights[flight_to_book_id - 1]});
 }
 
 void FlightMenager::cancel_booking()
