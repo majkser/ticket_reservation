@@ -78,5 +78,4 @@ int main()
 }
 
 // TODO
-// user ma mozliwosc usunac rezerwacje                DOING
 // co sie dzieje jak ktos ma rezerwacje a admin usuwa lot ?
