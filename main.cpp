@@ -76,6 +76,3 @@ int main()
     }
     return 0;
 }
-
-// TODO
-// co sie dzieje jak ktos ma rezerwacje a admin usuwa lot ?
