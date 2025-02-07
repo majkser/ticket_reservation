@@ -16,7 +16,8 @@ FlightMenager::FlightMenager()
 void FlightMenager::add_flight()
 {
     flight f;
-    f.flight_id = flights.size() + 1;
+    // f.flight_id = flights.size() + 1;
+    f.flight_id = flights.back().flight_id + 1;
     std::cout << "Podaj miasto wylotu: ";
     std::cin >> f.departure_city;
     std::cout << "Podaj miasto przylotu: ";
@@ -38,14 +39,26 @@ void FlightMenager::remove_flight()
     std::cout << "Podaj numer lotu do usuniecia: ";
     std::cin >> flight_to_remove_id;
 
-    if (flight_to_remove_id > flights.size())
+    // if (flight_to_remove_id > flights.size())
+    // {
+    //     std::cout << "Nie ma takiego lotu" << std::endl;
+    //     return;
+    // }
+
+    // flights.erase(flights.begin() + flight_to_remove_id - 1);
+    // std::cout << "Usunieto lot" << std::endl;
+
+    bool is_id_correct = std::find_if(flights.begin(), flights.end(), [flight_to_remove_id](flight f)
+                                      { return f.flight_id == flight_to_remove_id; }) != flights.end();
+    if (!is_id_correct)
     {
         std::cout << "Nie ma takiego lotu" << std::endl;
         return;
     }
 
-    flights.erase(flights.begin() + flight_to_remove_id - 1);
-    std::cout << "Usunieto lot" << std::endl;
+    flights.erase(std::remove_if(flights.begin(), flights.end(), [flight_to_remove_id](flight f)
+                                 { return f.flight_id == flight_to_remove_id; }),
+                  flights.end());
 
     // for (int i = 0; i < flights.size(); i++)
     // {
