@@ -81,25 +81,43 @@ void FlightMenager::display_flights()
 
 void FlightMenager::display_user_reservations()
 {
-    int booking_number;
-    std::cout << "Podaj numer rezerwacji: ";
-    std::cin >> booking_number;
+    //     int booking_number;
+    //     std::cout << "Podaj numer rezerwacji: ";
+    //     std::cin >> booking_number;
 
-    if (booking_map.find(booking_number) == booking_map.end())
+    //     if (booking_map.find(booking_number) == booking_map.end())
+    //     {
+    //         std::cout << "Rezerwacja o takim numerze nie istnieje" << std::endl;
+    //         return;
+    //     }
+
+    //     flight f = booking_map[booking_number];
+
+    //     std::cout << "Twoja rezerwacja ( o numerze: " << booking_number << "): " << std::endl;
+    //     std::cout << "lot o numerze: " << f.flight_id
+    //               << " z " << f.departure_city
+    //               << " do " << f.arrival_city
+    //               << " dnia " << f.date
+    //               << " o godzinie " << f.departure_time
+    //               << std::endl;
+    std::cout << "To twoje rezerwacje: " << std::endl;
+
+    if (booking_map.empty())
     {
-        std::cout << "Rezerwacja o takim numerze nie istnieje" << std::endl;
+        std::cout << "Nie masz zadnych rezerwacji" << std::endl;
         return;
     }
 
-    flight f = booking_map[booking_number];
-
-    std::cout << "Twoja rezerwacja ( o numerze: " << booking_number << "): " << std::endl;
-    std::cout << "lot o numerze: " << f.flight_id
-              << " z " << f.departure_city
-              << " do " << f.arrival_city
-              << " dnia " << f.date
-              << " o godzinie " << f.departure_time
-              << std::endl;
+    for (auto i : booking_map)
+    {
+        std::cout << "Twoja rezerwacja ( o numerze: " << i.first << "): ";
+        std::cout << "Lot " << i.second.flight_id
+                  << " z " << i.second.departure_city
+                  << " do " << i.second.arrival_city
+                  << " dnia " << i.second.date
+                  << " o godzinie " << i.second.departure_time
+                  << " w cenie " << i.second.price << " PLN" << std::endl;
+    }
 }
 
 void FlightMenager::booking_flight()
